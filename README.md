@@ -170,6 +170,8 @@ Generates all PDF figures shown in the thesis.
 
 ## How to Run
 
+For every .ipynb script listed below, run all cells in order from top to bottom. All outputs are saved to `DATA_ROOT`.
+
 1. Create a working directory `DATA_ROOT`. The pipeline assumes everything lives in this single directory.
 2. Clone or download this repository into `DATA_ROOT`. All outputs from running the scripts are stored in the `All results` directory of the repository; if you are not running the pipeline from scratch, drag the files out of `All results` into `DATA_ROOT` so the scripts can find them.
 3. Download the Bach dataset and place both Bach directories (`diliBach_4dryad_CND` and `diliBach_midi_4dryad`) inside `DATA_ROOT`, alongside all the scripts.
