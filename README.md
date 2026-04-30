@@ -11,12 +11,12 @@ The analysis consists of nine components:
 3. **Feature Extraction (processed pipeline):** Extracting, processing and standardising acoustic features from WAV files (`improved_extract_features.ipynb`)
 4. **TRF Computation (raw pipeline):** Computing encoding and decoding TRFs using raw features (`TRF_pipeline.py`)
 5. **TRF Computation (processed pipeline):** Computing encoding and decoding TRFs using processed features (`improved_TRF_pipeline.py`)
-6. **Result Aggregation:** Collecting results from all pickle files (from TRF pipelines) into one CSV (`make_csv.ipynb`)
-7. **Data Quality Check:** Verifying the aggregated CSV for unreliable boosting fits (`checking_nans.ipynb`)
+6. **Result Aggregation:** Collecting results from all pickle files (from TRF pipelines) into one CSV file (`make_csv.ipynb`)
+7. **Data Quality Check:** Identifying unreliable boosting fits in the aggregated CSV file (`checking_nans.ipynb`)
 8. **Statistical Analysis:** Comparing performance across groups, bands, features, directions and pipelines (`statistical_analysis.ipynb`)
 9. **Visualisation:** Producing all figures shown in the thesis (`visualisations.ipynb`)
 
-The `All results` directory contains intermediate outputs (directory of WAV files, feature pickles, the results CSV) and the directory of final visualisation PDFs. The only intermediate outputs not in this repository are large TRF pickle files; they are stored in Google Drive (see *Data Availability* for more information).
+The `All results` directory contains intermediate outputs (directory of WAV files, feature pickles, the results CSV) and the directory of final visualisation PDFs. The only intermediate outputs not in this repository are large TRF pickle files. They are stored in Google Drive (see *Data Availability* for more information).
 
 ## Data Requirements
 
@@ -33,6 +33,15 @@ The `All results` directory contains intermediate outputs (directory of WAV file
 - Converted to WAV format (`diliBach_wav_4dryad`) for acoustic feature extraction
 
 The EEG data and MIDI stimuli should be downloaded from the [Dryad repository (doi:10.5061/dryad.g1jwstqmh)](https://doi.org/10.5061/dryad.g1jwstqmh) cited in the references and placed inside the same directory as the rest of the scripts. For setup details, see the *How to Run* section below.
+
+## Data Availability
+
+The pickle files produced by the TRF pipelines (one per subject * band) are not committed to this repository due to their size. They are available on Google Drive instead:
+
+- **TRF pipeline for raw features** (100 files in `not improved results`): [Google Drive](https://drive.google.com/drive/folders/1lrsEbL7bi_VuoHowq53tGFW8_tVbqNLr)
+- **TRF pipeline for processed features** (100 files in `results`): [Google Drive](https://drive.google.com/drive/folders/1fVWHDM-4HAreBTAF4yEswM5RvZf6Caog)
+
+All other outputs generated and every script used for the thesis are uploaded directly to this repository.
 
 ## Dependencies
 
@@ -68,7 +77,7 @@ pip install pingouin statsmodels
 # os, csv, pickle, pathlib, itertools, sys, time
 ```
 
-## Pipeline Components
+## Pipeline Details
 
 ### 1. MIDI to WAV Conversion (`midi_to_wav.ipynb`)
 
@@ -185,15 +194,6 @@ For every .ipynb script listed below, run all cells in order from top to bottom.
 11. Verify data quality using `checking_nans.ipynb`.
 12. Run statistical analyses using `statistical_analysis.ipynb`.
 13. Generate visualisations using `visualisations.ipynb` which produces 23 PDF files.
-
-## Data Availability
-
-The pickle files produced by the TRF pipelines (one per subject * band) are not committed to this repository due to their size. They are available on Google Drive instead:
-
-- **TRF pipeline for raw features** (100 files in `not improved results`): [Google Drive](https://drive.google.com/drive/folders/1lrsEbL7bi_VuoHowq53tGFW8_tVbqNLr)
-- **TRF pipeline for processed features** (100 files in `results`): [Google Drive](https://drive.google.com/drive/folders/1fVWHDM-4HAreBTAF4yEswM5RvZf6Caog)
-
-All other outputs generated and every script used for the thesis are uploaded directly to this repository.
 
 ## Key Findings
 
