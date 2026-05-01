@@ -13,12 +13,14 @@ The analysis consists of nine components:
 5. **TRF Computation (processed pipeline):** Computing encoding and decoding TRFs using processed features (`improved_TRF_pipeline.py`)
 6. **Result Aggregation:** Collecting results from all pickle files (from TRF pipelines) into one CSV file (`make_csv.ipynb`)
 7. **Data Quality Check:** Identifying unreliable boosting fits in the aggregated CSV file (`checking_nans.ipynb`)
-8. **Statistical Analysis:** Comparing performance across groups, bands, features, directions and pipelines (`statistical_analysis.ipynb`)
+8. **Statistical Analysis:** Comparing performance across groups, bands, frequency features, directions (encoding and decoding) and pipelines (`statistical_analysis.ipynb`)
 9. **Visualisation:** Producing all figures shown in the thesis (`visualisations.ipynb`)
 
 The `All results` directory contains intermediate outputs (directory of WAV files, feature pickles, the results CSV) and the directory of final visualisation PDFs. The only intermediate outputs not in this repository are large TRF pickle files. They are stored in Google Drive (see *Data Availability* for more information).
 
 ## Data Requirements
+
+The EEG data and MIDI stimuli should be downloaded from the [Dryad repository (doi:10.5061/dryad.g1jwstqmh)](https://doi.org/10.5061/dryad.g1jwstqmh) (Di Liberto et al. 2020) and placed inside the same directory as the rest of the scripts. For setup details, see the *How to Run* section below.
 
 **EEG Data:**
 - Source: `diliBach_4dryad_CND`
@@ -27,12 +29,9 @@ The `All results` directory contains intermediate outputs (directory of WAV file
 - 30 trials per subject (10 unique Bach pieces, each presented 3 times)
 - 64-channel EEG recordings
 
-**Audio Stimuli:**
+**MIDI Stimuli:**
 - Source: `diliBach_midi_4dryad`
-- 10 Bach pieces in MIDI format (`audio1.mid` through `audio10.mid`)
-- Converted to WAV format (`diliBach_wav_4dryad`) for acoustic feature extraction
-
-The EEG data and MIDI stimuli should be downloaded from the [Dryad repository (doi:10.5061/dryad.g1jwstqmh)](https://doi.org/10.5061/dryad.g1jwstqmh) cited in the references and placed inside the same directory as the rest of the scripts. For setup details, see the *How to Run* section below.
+- 10 Bach pieces stored in MIDI format (`audio1.mid` through `audio10.mid`)
 
 ## Data Availability
 
@@ -166,7 +165,7 @@ There is no output. The results are discussed in the thesis.
 
 ### 9. Visualisations (`visualisations.ipynb`)
 
-Generates all PDF figures shown in the thesis.
+Generates every figure used in the thesis.
 
 **Figure Types:**
 - Waveform, acoustic features, EEG and TRF examples
@@ -175,7 +174,7 @@ Generates all PDF figures shown in the thesis.
 - Combination size and runtime analyses plots
 - Musicians vs non-musicians TRF butterfly plots and topomaps per band and feature
 
-**Output:** 23 PDF files with all visualisations
+**Output:** 23 PDF files of all figures presented in the thesis
 
 ## How to Run
 
@@ -197,8 +196,18 @@ For every .ipynb script listed below, run all cells in order from top to bottom.
 
 ## Key Findings
 
-All findings are presented in the thesis. The full document will be uploaded to this repository once it has been marked.
+All key findings are presented in the thesis. The full document will be uploaded to this repository once it has been marked.
+
+## Acknowledgements
+
+This project uses the publicly available dataset from Di Liberto et al. (2020).
+
+Several aspects of the TRF pipelines were adapted from the publicly available *TRF for Alice EEG Dataset* pipeline (Brodbeck et al. 2023). Every line in the scripts following this pipeline is annotated with the comment `# "TRF for Alice EEG Dataset"`.
+
+Preliminary results from this project, previously published at the AES AIMLA 2025 conference (Bozilovic and Roman 2025), are noted in the thesis.
 
 ## References
 
-The dataset is cited in the thesis. Several aspects of the TRF pipeline were adapted from the publicly available *TRF for Alice EEG Dataset* pipeline (also cited in the thesis). Every line in the scripts following this pipeline is annotated with the comment `# "TRF for Alice EEG Dataset"`. Preliminary results from this project, previously published at the AES AIMLA 2025 conference, are noted in the thesis. All citations can be found in the *References* section of the thesis.
+- Di Liberto, G. M. et al. (2020), ‘Cortical encoding of melodic expectations in human temporal cortex’, Elife 9, e51784.
+- Brodbeck, C. et al. (2023), ‘Eelbrain, a python toolkit for time-continuous analysis with temporal response functions’, eLife 12.
+- Bozilovic, Z. & Roman, I. R. (2025), Decoding melodic acoustic features from neural data, in ‘AES International Conference on Artificial Intelligence and Machine Learning for Audio (AIMLA)’. Late-breaking demo paper.
