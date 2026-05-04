@@ -1,4 +1,4 @@
-# Music-EEG TRF Analysis Pipeline
+# Linear encoding and decoding of brain activity in response to music
 
 This repository implements a pipeline for analysing EEG responses to musical stimuli using Temporal Response Functions (TRFs). The pipeline includes: preparing musical stimuli from MIDI files, extracting acoustic features from the audio (converted WAV files), computing forward (single + multi feature encoding) and backward (decoding) TRF models, aggregating results into a single CSV, checking for unreliable boosting fits, performing statistical analyses, and generating visualisations. The analysis focuses on modelling the relationship between acoustic features of music and EEG to compare brain activity patterns between musicians and non-musicians across five frequency bands and two feature-extraction pipelines (raw and processed).
 
