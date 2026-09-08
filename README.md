@@ -196,7 +196,7 @@ For every .ipynb script listed below, run all cells in order from top to bottom.
 
 ## Key Findings
 
-All key findings are presented in the thesis. The full document will be uploaded to this repository once it has been marked.
+All key findings are presented in the thesis.
 
 ## Acknowledgements
 
