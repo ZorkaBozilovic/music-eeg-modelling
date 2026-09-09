@@ -35,10 +35,10 @@ The EEG data and MIDI stimuli should be downloaded from the [Dryad repository (d
 
 ## Data Availability
 
-The pickle files produced by the TRF pipelines (one per subject * band) are not committed to this repository due to their size. They are available on Google Drive instead:
+The pickle files produced by the TRF pipelines (one per subject * band) are not committed to this repository due to their size, but can be provided upon request. Please contact [zorka.bozilovic@gmail.com](mailto:zorka.bozilovic@gmail.com) for:
+- Pickle files from the **TRF pipeline for raw features** (100 files in `not improved results`)
+- Pickle files from the **TRF pipeline for processed features** (100 files in `results`)
 
-- **TRF pipeline for raw features** (100 files in `not improved results`): [Google Drive](https://drive.google.com/drive/folders/1lrsEbL7bi_VuoHowq53tGFW8_tVbqNLr)
-- **TRF pipeline for processed features** (100 files in `results`): [Google Drive](https://drive.google.com/drive/folders/1fVWHDM-4HAreBTAF4yEswM5RvZf6Caog)
 
 All other outputs generated and every script used for the thesis are uploaded directly to this repository.
 
@@ -196,7 +196,7 @@ For every .ipynb script listed below, run all cells in order from top to bottom.
 
 ## Key Findings
 
-All key findings are presented in the thesis.
+All key findings are presented in the `Undergraduate thesis`.
 
 ## Acknowledgements
 
